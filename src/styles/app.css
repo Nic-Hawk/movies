@@ -1,3 +1,36 @@
-body {
-    background-color: red;
+li {
+  list-style: none;
 }
+
+a {
+  text-decoration: none;
+}
+
+#movie-container {
+  width: 90%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+#movie-container .movie-img-container {
+  width: 160px;
+  height: 244px;
+}
+#movie-container .movie-img-container img {
+  min-width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+#movie-container::-webkit-scrollbar {
+  width: 12px;
+}
+#movie-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+#movie-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=app.css.map */

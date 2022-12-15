@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass",
+    "sass:watch": "sass --watch src/styles/sass/app.scss  src/styles/app.css"
+    
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Nic-Hawk/movies/issues"
   },
-  "homepage": "https://github.com/Nic-Hawk/movies#readme"
+  "homepage": "https://github.com/Nic-Hawk/movies#readme",
+  "dependencies": {
+    "sass": "^1.56.2"
+  }
 }
