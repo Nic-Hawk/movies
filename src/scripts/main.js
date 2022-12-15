@@ -27,7 +27,42 @@ async function getTrendingMoviesPreview() {
 
     });
 
-
 }
 
-getTrendingMoviesPreview()
+async function getCategoriesPreview() {
+
+    const res = await fetch (
+        `${BASE_URL}/genre/movie/list?api_key=${API_KEY}`
+    );
+
+    const data = await res.json();
+    const categories = data.genres;
+    let len = categories.length;
+
+    const cat1 = document.querySelector('.categoria1');
+    const cat2 = document.querySelector('.categoria2');
+
+    categories.forEach(category => {
+        
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        const square = document.createElement('div');
+        li.className = 'categoria';        
+        square.classList.add('square');
+
+        a.setAttribute('href', `./categoria.html?id=${category.id}`);
+        a.textContent = category.name;
+        li.appendChild(square);
+        li.appendChild(a);
+
+        // si es par, agregamos la categoría al contenedor1
+        // si es impar, agregamos la categoría al contenedor2
+        (len % 2 === 0 ? cat2 : cat1).appendChild(li);
+        len--;
+    });
+}
+
+
+
+getTrendingMoviesPreview();
+getCategoriesPreview();
